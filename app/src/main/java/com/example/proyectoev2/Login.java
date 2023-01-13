@@ -21,5 +21,9 @@ public class Login extends AppCompatActivity {
 
     }
 
+    private void botonRegistrar(){
+
+    }
+
 
 }
