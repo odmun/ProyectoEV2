@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">ProyectoEV2</string>
-    <string name="introduzca_su_usuario">Introduzca su usuario</string>
     <string name="introduzca_su_contrase_a">Introduzca su contraseña</string>
     <string name="login">Login</string>
     <string name="idioma">Idioma</string>

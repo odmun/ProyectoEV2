@@ -94,7 +94,7 @@
         android:layout_height="40dp"
         android:background="@drawable/boton_sin_fondo"
         android:text="@string/registrate"
-        android:textColor="#F11717"
+        android:textColor="#F8DF04"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintStart_toEndOf="@+id/textView2" />
