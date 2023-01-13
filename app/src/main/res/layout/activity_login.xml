@@ -17,7 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.444"
-        app:srcCompat="@drawable/music_logo_png_2350" />
+        app:srcCompat="@drawable/music_logo_png_2350"
+        tools:ignore="ContentDescription" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -36,7 +37,8 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -54,7 +56,8 @@
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.434" />
+        app:layout_constraintVertical_bias="0.434"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/button"
@@ -124,5 +127,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.791" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="318dp"
+        android:layout_height="43dp"
+        android:background="@drawable/boton_google"
+        android:drawableStart="@drawable/google21"
+        android:paddingStart="30dp"
+        android:textSize="18sp"
+        android:text="@string/iniciar_con_google"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.683" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
