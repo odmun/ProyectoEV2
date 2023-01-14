@@ -16,63 +16,56 @@ import java.util.regex.Pattern;
 
 public class Registro extends AppCompatActivity {
 
-    private EditText nombreUsuario, mail, contraseña;
-    private Button volverlogin;
+    private EditText nombreUsuario, mail, contrasena;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        nombreUsuario=findViewById(R.id.nombreUsuario);
-        mail=findViewById(R.id.mail);
-        contraseña=findViewById(R.id.contraseña);
+        nombreUsuario = findViewById(R.id.nombreUsuario);
+        mail = findViewById(R.id.mail);
+        contrasena = findViewById(R.id.contraseña);
 
-        volverlogin = (Button)findViewById(R.id.volverlogin);
+        Button volverlogin = (Button) findViewById(R.id.volverlogin);
 
-        volverlogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(Registro.this, Login.class);
-                startActivity(intent);
-            }
+        volverlogin.setOnClickListener(view -> {
+            Intent intent = new Intent(Registro.this, Login.class);
+            startActivity(intent);
         });
     }
 
     public void registrarusuario(View v) {
-        ///GHTDHGTRHTRHRTEHERTHRT
-        //Pattern pattern = Pattern
-        //        .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-        //                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
-        //Matcher mather = pattern.matcher(mail.getText());
-        //if (mather.find() == true) {
-        RegistroUsuarioSQLite admin = new RegistroUsuarioSQLite(this,
-                "administracion", null, 1);
-        SQLiteDatabase bd = admin.getWritableDatabase();
-        String userName = nombreUsuario.getText().toString();
-        String eMail = mail.getText().toString();
-        String password = contraseña.getText().toString();
-        ContentValues registro = new ContentValues();
-        registro.put("nombreUsuario", userName);
-        registro.put("mail", eMail);
-        registro.put("contraseña", password);
-        bd.insert("UsuarioRegistrado", null, registro);
-        bd.close();
-        nombreUsuario.setText("");
-        mail.setText("");
-        contraseña.setText("");
-        Toast.makeText(this, "Cuenta creada correctamente!.",
-                Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(Registro.this, Login.class);
-        startActivity(intent);
-        //} else {
-        //    Toast.makeText(this, "El email ingresado es inválido.",
-        //            Toast.LENGTH_SHORT).show();
-        //}
+        Pattern pattern = Pattern
+                .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Matcher mather = pattern.matcher(mail.getText());
+        if (mather.find()) {
+            RegistroUsuarioSQLite admin = new RegistroUsuarioSQLite(this,
+                    "administracion", null, 1);
+            SQLiteDatabase bd = admin.getWritableDatabase();
+            String userName = nombreUsuario.getText().toString();
+            String eMail = mail.getText().toString();
+            String password = contrasena.getText().toString();
+            ContentValues registro = new ContentValues();
+            registro.put("nombreUsuario", userName);
+            registro.put("mail", eMail);
+            registro.put("contraseña", password);
+            bd.insert("UsuarioRegistrado", null, registro);
+            bd.close();
+            nombreUsuario.setText("");
+            mail.setText("");
+            contrasena.setText("");
+            Toast.makeText(this, "¡Cuenta creada correctamente!.",
+                    Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Registro.this, Login.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "El email ingresado es inválido.",
+                    Toast.LENGTH_SHORT).show();
+        }
 
     }
-
 
 
 }

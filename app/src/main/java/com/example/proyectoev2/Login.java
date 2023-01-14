@@ -7,19 +7,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.util.Arrays;
-
 public class Login extends AppCompatActivity {
 
-    private EditText mail, contraseña;
+    private EditText mail, contrasena;
     private Spinner spinner;
-    private Button pantallaregistro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,19 +23,15 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mail=findViewById(R.id.mail);
-        contraseña=findViewById(R.id.contraseña);
+        contrasena =findViewById(R.id.contraseña);
 
         spinner = findViewById(R.id.idiomas);
-        pantallaregistro = (Button)findViewById(R.id.pantallaregistro);
+        Button pantallaregistro = (Button) findViewById(R.id.pantallaregistro);
 
-<<<<<<< HEAD
 
-        pantallaregistro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Login.this, Registro.class);
-                startActivity(intent);
-            }
+        pantallaregistro.setOnClickListener(view -> {
+            Intent intent = new Intent(Login.this, Registro.class);
+            startActivity(intent);
         });
     }
 
@@ -50,21 +42,19 @@ public class Login extends AppCompatActivity {
         String eMail = mail.getText().toString();
         //String password = contraseña.getText().toString();
         Cursor fila = bd.rawQuery(
-                "select mail,contraseña from UsuarioRegistrado where mail=" + eMail, null);
+                "select mail,contraseña from UsuarioRegistrado where mail='" + eMail, null);
         if (fila.moveToFirst()) {
             mail.setText(fila.getString(0));
-            contraseña.setText(fila.getString(1));
-            Toast.makeText(this, "Correo"+mail.toString()+"Pass"+contraseña.toString(),
+            contrasena.setText(fila.getString(1));
+            Toast.makeText(this, "Correo"+mail.toString()+"Pass"+ contrasena.toString(),
                     Toast.LENGTH_SHORT).show();
-            //Intent intent = new Intent(Login.this, MainUser.class);
-            //startActivity(intent);
+            Intent intent = new Intent(Login.this, MainUser.class);
+            startActivity(intent);
         } else
             Toast.makeText(this, "Correo o contraseña incorrecta.",
                     Toast.LENGTH_SHORT).show();
         bd.close();
     }
 
-=======
->>>>>>> main
 
 }
