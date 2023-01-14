@@ -41,6 +41,7 @@ public class Registro extends AppCompatActivity {
     }
 
     public void registrarusuario(View v) {
+        ///GHTDHGTRHTRHRTEHERTHRT
         //Pattern pattern = Pattern
         //        .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
         //                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
@@ -69,6 +70,7 @@ public class Registro extends AppCompatActivity {
         //    Toast.makeText(this, "El email ingresado es inválido.",
         //            Toast.LENGTH_SHORT).show();
         //}
+
     }
 
 
