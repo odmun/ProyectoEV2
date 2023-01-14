@@ -11,7 +11,7 @@
         android:id="@+id/imageView3"
         android:layout_width="128dp"
         android:layout_height="175dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/mail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         tools:ignore="ContentDescription" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/mail"
         android:layout_width="312dp"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"
@@ -32,7 +32,7 @@
         android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintBottom_toTopOf="@+id/contraseña"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/contraseña"
         android:layout_width="309dp"
         android:layout_height="72dp"
         android:drawableStart="@drawable/icono_contra"
@@ -60,18 +60,19 @@
         android:autofillHints="" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/registrarse"
         android:layout_width="147dp"
         android:layout_height="50dp"
         android:background="@drawable/boton_redondo"
+        android:onClick="consultaUsuarioPorMailYPassword"
         android:text="@string/iniciar_sesi_n"
         android:textColor="@color/negror"
-        android:textSize="16sp"
 
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/contraseña"
         app:layout_constraintVertical_bias="0.07" />
 
     <TextView
@@ -89,15 +90,18 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="148dp"
-        android:layout_height="40dp"
+        android:id="@+id/pantallaregistro"
+        android:layout_width="138dp"
+        android:layout_height="52dp"
         android:background="@drawable/boton_sin_fondo"
+        android:onClick="pantallaregistro"
         android:text="@string/registrate"
         android:textColor="#F11717"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintStart_toEndOf="@+id/textView2" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.782" />
 
     <Spinner
         android:id="@+id/idiomas"
@@ -115,7 +119,7 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="178dp"
-        android:layout_height="40dp"
+        android:layout_height="53dp"
         android:layout_marginStart="16dp"
         android:gravity="center"
         android:text="@string/no_tienes_cuenta"
@@ -123,10 +127,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.791" />
+        app:layout_constraintVertical_bias="0.782" />
 
     <Button
         android:id="@+id/button3"
