@@ -32,6 +32,7 @@ public class Login extends AppCompatActivity {
         spinner = findViewById(R.id.idiomas);
         pantallaregistro = (Button)findViewById(R.id.pantallaregistro);
 
+<<<<<<< HEAD
 
         pantallaregistro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,5 +64,7 @@ public class Login extends AppCompatActivity {
         bd.close();
     }
 
+=======
+>>>>>>> main
 
 }

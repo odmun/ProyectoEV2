@@ -96,7 +96,7 @@
         android:background="@drawable/boton_sin_fondo"
         android:onClick="pantallaregistro"
         android:text="@string/registrate"
-        android:textColor="#F11717"
+        android:textColor="#F8DF04"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
