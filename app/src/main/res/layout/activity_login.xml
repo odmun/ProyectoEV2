@@ -133,7 +133,7 @@
         app:layout_constraintVertical_bias="0.782" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/logingoogle"
         android:layout_width="318dp"
         android:layout_height="43dp"
         android:background="@drawable/boton_google"
